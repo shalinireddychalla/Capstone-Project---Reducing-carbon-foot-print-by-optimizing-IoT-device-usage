@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Model Evaluation</h1>
+
+        <!-- Random Forest Regressor Model Evaluation -->
+        <h2>Random Forest Regressor Evaluation</h2>
+        <h3>Accuracy</h3>
+        <p>Training R^2 of Random Forest: {{ results.random_forest.train_r2 }}</p>
+        <p>Test R^2 of Random Forest: {{ results.random_forest.test_r2 }}</p>
+
+        <h3>Mean Squared Error (MSE)</h3>
+        <p>Training MSE: {{ results.random_forest.train_mse }}</p>
+        <p>Test MSE: {{ results.random_forest.test_mse }}</p>
+
+     
+        <!-- SVR Model Evaluation -->
+        <h2>Support Vector Regressor (SVR) Evaluation</h2>
+        <h3>Accuracy</h3>
+        <p>Training R^2 of SVR: {{ results.svr.train_r2 }}</p>
+        <p>Test R^2 of SVR: {{ results.svr.test_r2 }}</p>
+
+        <h3>Mean Squared Error (MSE)</h3>
+        <p>Training MSE: {{ results.svr.train_mse }}</p>
+        <p>Test MSE: {{ results.svr.test_mse }}</p>
+
+      
+
+        <!-- XGBoost Regressor Model Evaluation -->
+        <h2>XGBoost Regressor Evaluation</h2>
+        <h3>Accuracy</h3>
+        <p>Training R^2 of XGBoost: {{ results.xgboost.train_r2 }}</p>
+        <p>Test R^2 of XGBoost: {{ results.xgboost.test_r2 }}</p>
+
+        <h3>Mean Squared Error (MSE)</h3>
+        <p>Training MSE: {{ results.xgboost.train_mse }}</p>
+        <p>Test MSE: {{ results.xgboost.test_mse }}</p>
+
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

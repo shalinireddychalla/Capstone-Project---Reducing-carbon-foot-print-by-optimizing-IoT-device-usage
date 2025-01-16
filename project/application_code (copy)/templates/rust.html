@@ -1,0 +1,61 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<style>
+  html body {
+    
+        background-image: url("{{ url_for('static', filename='images/i3.jpeg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;    
+  }
+</style>
+
+<style>
+    .background {
+        background-image: url("{{ url_for('static', filename='images/i3.jpeg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<br /><br />
+  <h2 style="text-align: center; margin: 0px; color: black">
+    <b>IOT Devices Foot print detection using Machine learning</b>
+  </h2>
+  <br />
+  <br>
+
+<div style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+    font-weight: bold;
+  ">
+
+  
+
+<form class="form-signin" method="post" enctype="multipart/form-data">
+  <button class="btn btn-lg btn-secondary btn-block" type="button" onclick="location.href='{{ url_for('test_application') }}'" style="font-weight: bold;">Test the Application</button>
+
+</form>
+
+</div>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+</div>
+{% endblock %}

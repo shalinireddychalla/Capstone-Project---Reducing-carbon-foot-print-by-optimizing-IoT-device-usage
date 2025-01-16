@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advice Best Crop</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-image: url("{{ url_for('static', filename='images/bg420.jpg') }}");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .form-container h1 {
+      margin-bottom: 20px;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .form-container .input-group {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .form-container label {
+      width: 100%;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .form-container select,
+    .form-container input {
+      width: 32%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: yellow;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button,
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .form-container p {
+      color: green;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Check The IOT Device Status</h1>
+
+    <!-- Form with Updated Mappings -->
+<form action="/predict1" method="POST">
+  <div class="input-group">
+    <label for="latitude">Latitude:</label>
+    <input  id="latitude" name="latitude"  required>
+
+    <label for="longitude">Longitude:</label>
+    <input  id="longitude" name="longitude"  required>
+
+    <label for="proximity">Proximity (km):</label>
+    <input  id="proximity" name="proximity"  required>
+
+    <label for="energy_consumption">Energy Consumption (kWh):</label>
+    <input  id="energy_consumption" name="energy_consumption"  required>
+
+    <label for="transmission_rate">Transmission Rate (Mbps):</label>
+    <input  id="transmission_rate" name="transmission_rate"  required>
+
+    <label for="pollution_levels">Pollution Levels (µg/m³):</label>
+    <input  id="pollution_levels" name="pollution_levels" required>
+
+    <label for="redundancy_score">Redundancy Score:</label>
+    <input  id="redundancy_score" name="redundancy_score" required>
+
+    <label for="carbon_footprint">Carbon Footprint (kg CO₂):</label>
+    <input t id="carbon_footprint" name="carbon_footprint" required>
+
+    <label for="cluster_id">Cluster ID:</label>
+    <input  id="cluster_id" name="cluster_id" required>
+  </div>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+    <br>
+    <br>
+    <p>{{ prediction1_text }}</p>
+  </div>
+</body>
+</html>
